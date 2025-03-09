@@ -31,7 +31,6 @@
         .logo {
             max-width: 120px;
         }
-        /* Container for Logo + Title */
         .logo-title-container {
             display: flex;
             align-items: center;
@@ -101,11 +100,23 @@
         button:hover {
             background: #444;
         }
+        /* Gallery Section Styles */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .gallery-container img {
+            max-width: 250px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Container to hold logo and text side by side -->
         <div class="logo-title-container">
             <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
             <strong>Euro Standard LLC</strong>
@@ -113,59 +124,4 @@
         
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="#contact" class="cta-button">Get a Free Quote</a>
-    </header>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Euro Standart LLC specializes in professional tile installation, focusing on stunning backsplashes and elegant bathroom designs.</p>
-    </section>
-    
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Backsplash Tile Installation</li>
-            <li>Bathroom Tile Installation</li>
-            <li>Custom Tile Designs</li>
-            <li>Tile Demolition & Removal</li>
-        </ul>
-    </section>
-    
-    <section id="gallery">
-        <h2>Project Gallery</h2>
-        <p>Check out our past work below. More images coming soon!</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: 612-236-7381</p>
-        <p>Address: Rosemount, MN</p>
-        <p>Email: <a href="mailto:euroostandartllc@gmail.com">euroostandartllc@gmail.com</a></p>
-        <p>Business Hours: 24/7 (Closed on Sunday)</p>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p id="form-message" style="color: green; display: none;">Thank you for reaching out! We'll get back to you soon.</p>
-    </section>
-    
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("form-message").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("form-message").style.display = "none";
-            }, 5000);
-            this.reset();
-        });
-    </script>
-</body>
-</html>
+                <li><a href="#about">About</a>
