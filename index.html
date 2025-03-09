@@ -8,62 +8,154 @@
     <title>Euro Standart LLC</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            max-width: 120px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+        .cta-button {
+            background: #f4a261;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #e76f51;
+        }
+        section {
+            padding: 40px 5%;
+            text-align: center;
+            background: white;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            margin: auto;
+        }
+        input, textarea {
+            margin: 10px;
+            padding: 12px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        button {
+            background: #222;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #444;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#service-area">Service Area</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#gallery">Photos</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <a href="tel:612-236-7381" class="cta-button">Call for a FREE Quote</a>
-        </div>
+        <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-button">Get a Free Quote</a>
     </header>
     
-    <section id="home" class="hero">
-        <h1>Quality Tile Installation You Can Trust</h1>
-        <p>Specializing in custom tile designs, backsplashes, and bathroom renovations.</p>
-        <a href="#contact" class="cta-button">Get a Free Estimate</a>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Euro Standart LLC specializes in professional tile installation, focusing on stunning backsplashes and elegant bathroom designs.</p>
     </section>
-
+    
     <section id="services">
         <h2>Our Services</h2>
         <ul>
-            <li>Backsplash Installation</li>
+            <li>Backsplash Tile Installation</li>
             <li>Bathroom Tile Installation</li>
             <li>Custom Tile Designs</li>
             <li>Tile Demolition & Removal</li>
         </ul>
     </section>
-
-    <section id="service-area">
-        <h2>Service Area</h2>
-        <p>We proudly serve Rosemount, MN, and surrounding areas.</p>
-    </section>
-
-    <section id="reviews">
-        <h2>Customer Reviews</h2>
-        <p>See what our satisfied customers have to say about our work.</p>
-    </section>
     
     <section id="gallery">
         <h2>Project Gallery</h2>
-        <p>Take a look at our completed tile installation projects.</p>
+        <p>Check out our past work below. More images coming soon!</p>
     </section>
-
+    
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Phone: <a href="tel:612-236-7381">612-236-7381</a></p>
+        <p>Phone: 612-236-7381</p>
+        <p>Address: Rosemount, MN</p>
         <p>Email: <a href="mailto:euroostandartllc@gmail.com">euroostandartllc@gmail.com</a></p>
         <p>Business Hours: 24/7 (Closed on Sunday)</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="form-message" style="color: green; display: none;">Thank you for reaching out! We'll get back to you soon.</p>
     </section>
+    
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("form-message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("form-message").style.display = "none";
+            }, 5000);
+            this.reset();
+        });
+    </script>
 </body>
 </html>
 
