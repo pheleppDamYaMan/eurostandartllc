@@ -100,18 +100,20 @@
         button:hover {
             background: #444;
         }
-        /* Gallery Section Styles */
+        /* Gallery styles */
         .gallery-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
+            justify-content: center; /* centers images horizontally */
+            gap: 1rem;              /* space between images */
+            flex-wrap: nowrap;      /* if you prefer wrapping on small screens, change to 'wrap' */
             margin-top: 1rem;
+            overflow-x: auto;       /* allows horizontal scrolling if narrower screens can’t fit all images */
         }
         .gallery-container img {
-            max-width: 250px;
+            max-width: 300px;       /* adjust as needed */
             border: 2px solid #ccc;
             border-radius: 5px;
+            flex-shrink: 0;         /* prevents images from shrinking if container is too small */
         }
     </style>
 </head>
@@ -124,4 +126,65 @@
         
         <nav>
             <ul>
-                <li><a href="#about">About</a>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-button">Get a Free Quote</a>
+    </header>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Euro Standart LLC specializes in professional tile installation, focusing on stunning backsplashes and elegant bathroom designs.</p>
+    </section>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Backsplash Tile Installation</li>
+            <li>Bathroom Tile Installation</li>
+            <li>Custom Tile Designs</li>
+            <li>Tile Demolition & Removal</li>
+        </ul>
+    </section>
+    
+    <section id="gallery">
+        <h2>Project Gallery</h2>
+        <p>Check out our past work below. More images coming soon!</p>
+        <div class="gallery-container">
+            <img src="wall1.jpeg" alt="Wall Installation 1">
+            <img src="wall2.jpeg" alt="Wall Installation 2">
+            <img src="wall3.jpeg" alt="Wall Installation 3">
+            <img src="wall4.jpeg" alt="Wall Installation 4">
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: 612-236-7381</p>
+        <p>Address: Rosemount, MN</p>
+        <p>Email: <a href="mailto:euroostandartllc@gmail.com">euroostandartllc@gmail.com</a></p>
+        <p>Business Hours: 24/7 (Closed on Sunday)</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="form-message" style="color: green; display: none;">Thank you for reaching out! We'll get back to you soon.</p>
+    </section>
+    
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("form-message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("form-message").style.display = "none";
+            }, 5000);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
