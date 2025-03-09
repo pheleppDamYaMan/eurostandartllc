@@ -3,163 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Euro Standart LLC specializes in professional tile installation, including backsplashes and elegant bathroom designs.">
+    <meta name="description" content="Euro Standart LLC - Expert Tile Installation Services">
     <meta name="keywords" content="tile installation, backsplash, bathroom tiles, custom tile design">
-    <title>Euro Standart LLC - Tile Installation</title>
+    <title>Euro Standart LLC</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo {
-            max-width: 100px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #f4a261;
-        }
-        .cta-button {
-            background: #f4a261;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-            background: white;
-            margin: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        input, textarea {
-            margin: 10px;
-            padding: 10px;
-            width: 80%;
-            max-width: 400px;
-        }
-        button {
-            background: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background: #555;
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-        iframe {
-            width: 100%;
-            height: 300px;
-            border: 0;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
-        <h1>Euro Standart LLC</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="#contact" class="cta-button">Get a Free Quote</a>
+        <div class="container">
+            <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#service-area">Service Area</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#gallery">Photos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="tel:612-236-7381" class="cta-button">Call for a FREE Quote</a>
+        </div>
     </header>
     
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Euro Standart LLC specializes in professional tile installation, focusing on stunning backsplashes and elegant bathroom designs.</p>
+    <section id="home" class="hero">
+        <h1>Quality Tile Installation You Can Trust</h1>
+        <p>Specializing in custom tile designs, backsplashes, and bathroom renovations.</p>
+        <a href="#contact" class="cta-button">Get a Free Estimate</a>
     </section>
-    
+
     <section id="services">
         <h2>Our Services</h2>
         <ul>
-            <li>Backsplash Tile Installation</li>
+            <li>Backsplash Installation</li>
             <li>Bathroom Tile Installation</li>
             <li>Custom Tile Designs</li>
             <li>Tile Demolition & Removal</li>
         </ul>
     </section>
+
+    <section id="service-area">
+        <h2>Service Area</h2>
+        <p>We proudly serve Rosemount, MN, and surrounding areas.</p>
+    </section>
+
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <p>See what our satisfied customers have to say about our work.</p>
+    </section>
     
     <section id="gallery">
         <h2>Project Gallery</h2>
-        <p>Check out our past work below. More images coming soon!</p>
+        <p>Take a look at our completed tile installation projects.</p>
     </section>
-    
+
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Phone: 612-236-7381</p>
-        <p>Address: Rosemount, MN</p>
+        <p>Phone: <a href="tel:612-236-7381">612-236-7381</a></p>
         <p>Email: <a href="mailto:euroostandartllc@gmail.com">euroostandartllc@gmail.com</a></p>
         <p>Business Hours: 24/7 (Closed on Sunday)</p>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p id="form-message" style="color: green; display: none;">Thank you for reaching out! We'll get back to you soon.</p>
     </section>
-    
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("form-message").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("form-message").style.display = "none";
-            }, 5000);
-            this.reset();
-        });
-    </script>
 </body>
 </html>
+
