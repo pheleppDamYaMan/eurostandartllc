@@ -31,6 +31,12 @@
         .logo {
             max-width: 120px;
         }
+        /* Container for Logo + Title */
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
         nav ul {
             list-style: none;
             padding: 0;
@@ -99,7 +105,12 @@
 </head>
 <body>
     <header>
-        <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
+        <!-- Container to hold logo and text side by side -->
+        <div class="logo-title-container">
+            <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
+            <strong>Euro Standard LLC</strong>
+        </div>
+        
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -158,4 +169,3 @@
     </script>
 </body>
 </html>
-
