@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Euro Standart LLC - Expert Tile Installation Services">
     <meta name="keywords" content="tile installation, backsplash, bathroom tiles, custom tile design">
+    <meta property="og:title" content="Euro Standart LLC - Tile Installation Experts">
+    <meta property="og:description" content="High-quality tile installation services for kitchens, bathrooms, and more. Get a free quote today!">
+    <meta property="og:image" content="logo.jpeg">
     <title>Euro Standart LLC</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -16,6 +20,7 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
         header {
             background: #222;
@@ -30,11 +35,6 @@
         }
         .logo {
             max-width: 120px;
-        }
-        .logo-title-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
         }
         nav ul {
             list-style: none;
@@ -64,56 +64,38 @@
         .cta-button:hover {
             background: #e76f51;
         }
-        section {
-            padding: 40px 5%;
-            text-align: center;
-            background: white;
-            margin: 20px auto;
-            max-width: 1200px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        form {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-tile.jpg') no-repeat center center/cover;
+            height: 90vh;
+            color: #fff;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            max-width: 500px;
-            margin: auto;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
         }
-        input, textarea {
-            margin: 10px;
-            padding: 12px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
         }
-        button {
-            background: #222;
+        /* Service Areas */
+        .service-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+        .area-card {
+            background: #f4a261;
             color: white;
-            padding: 12px 20px;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background: #444;
-        }
-        /* Gallery styles */
-        .gallery-container {
-            display: flex;
-            justify-content: center; /* centers images horizontally */
-            gap: 1rem;              /* space between images */
-            flex-wrap: nowrap;      /* if you prefer wrapping on small screens, change to 'wrap' */
-            margin-top: 1rem;
-            overflow-x: auto;       /* allows horizontal scrolling if narrower screens can’t fit all images */
-        }
-        .gallery-container img {
-            max-width: 300px;       /* adjust as needed */
-            border: 2px solid #ccc;
+            padding: 10px;
             border-radius: 5px;
-            flex-shrink: 0;         /* prevents images from shrinking if container is too small */
+            transition: transform 0.3s;
+        }
+        .area-card:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -123,95 +105,51 @@
             <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
             <strong>Euro Standard LLC</strong>
         </div>
-        
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#service-areas">Service Areas</a></li>
             </ul>
         </nav>
         <a href="#contact" class="cta-button">Get a Free Quote</a>
     </header>
     
-    <section id="about">
-        <h2>About Us</h2>
-        <p>
-            Euro Standart LLC has been proudly serving our community for over 20 years, delivering top-notch 
-            tile installation services that bring beauty, practicality, and long-lasting durability to every 
-            project. During this time, we have completed hundreds of tile installations in kitchens, bathrooms, 
-            outdoor patios, and more, always aiming to exceed our clients’ expectations. Our mission is simple: 
-            to provide premium-quality craftsmanship at a reasonable price. 
-        </p>
-        <p>
-            We understand that a stunning backsplash or a beautifully tiled bathroom can transform an entire 
-            space, and we take pride in offering a wide range of tile materials and design options to suit 
-            any style or budget. Whether you’re updating a single room or planning a major renovation, our 
-            experienced team will work closely with you to customize a solution that brings your vision to life 
-            in a timely manner.
-        </p>
-        <p>
-            Over the last two decades, we’ve built our reputation on exceptional customer service and superior 
-            workmanship. We value your trust and your home, which is why we treat every job with meticulous 
-            attention to detail. From preparation and layout to cutting and grouting, we handle each step of 
-            the process with utmost precision. Our customers appreciate not only the end results but also the 
-            clear communication, reliable scheduling, and competitive pricing we provide.
-        </p>
-        <p>
-            At Euro Standart LLC, we believe in doing things right the first time. Our many happy customers can 
-            attest to our commitment to quality, safety, and respect for your space. Let us show you how new 
-            tilework can elevate your home’s look and feel, all while staying within your budget and timeline. 
-            Contact us today to discuss your ideas and discover why countless homeowners continue to choose 
-            us for their tiling needs.
-        </p>
+    <section class="hero">
+        <h1>Transform Your Space with Expert Tile Installation</h1>
+        <p>High-quality craftsmanship and stunning designs to elevate your home.</p>
+        <a href="#contact" class="cta-button">Get a Free Quote</a>
     </section>
     
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Backsplash Tile Installation</li>
-            <li>Bathroom Tile Installation</li>
-            <li>Custom Tile Designs</li>
-            <li>Tile Demolition & Removal</li>
-        </ul>
-    </section>
-    
-    <section id="gallery">
-        <h2>Project Gallery</h2>
-        <p>Check out our past work below. More images coming soon!</p>
-        <div class="gallery-container">
-            <img src="wall1.jpeg" alt="Wall Installation 1">
-            <img src="wall2.jpeg" alt="Wall Installation 2">
-            <img src="wall3.jpeg" alt="Wall Installation 3">
-            <img src="wall4.jpeg" alt="Wall Installation 4">
+    <section id="service-areas">
+        <h2>Our Service Areas</h2>
+        <div class="service-areas">
+            <div class="area-card">Minneapolis</div>
+            <div class="area-card">St. Paul</div>
+            <div class="area-card">Apple Valley</div>
+            <div class="area-card">Rosemount</div>
+            <div class="area-card">Eagan</div>
+            <div class="area-card">Lakeville</div>
+            <div class="area-card">Farmington</div>
+            <div class="area-card">Edina</div>
+            <div class="area-card">Bloomington</div>
+            <div class="area-card">Shakopee</div>
+            <div class="area-card">Savage</div>
+            <div class="area-card">Woodbury</div>
+            <div class="area-card">Roseville</div>
+            <div class="area-card">Wayzata</div>
+            <div class="area-card">Eden Prairie</div>
+            <div class="area-card">Maple Grove</div>
+            <div class="area-card">Minnetonka</div>
+            <div class="area-card">Chaska</div>
         </div>
     </section>
     
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Phone: 612-236-7381</p>
-        <p>Address: Rosemount, MN</p>
-        <p>Email: <a href="mailto:euroostandartllc@gmail.com">euroostandartllc@gmail.com</a></p>
-        <p>Business Hours: 24/7 (Closed on Sunday)</p>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p id="form-message" style="color: green; display: none;">Thank you for reaching out! We'll get back to you soon.</p>
+        <p>Phone: 612-236-7381 | Address: Rosemount, MN | Email: <a href="mailto:euroostandartllc@gmail.com">euroostandartllc@gmail.com</a></p>
     </section>
-    
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("form-message").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("form-message").style.display = "none";
-            }, 5000);
-            this.reset();
-        });
-    </script>
 </body>
 </html>
