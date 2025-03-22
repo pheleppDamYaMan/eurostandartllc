@@ -1,166 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Euro Standart LLC - Expert Tile Installation Services">
-    <meta name="keywords" content="tile installation, backsplash, bathroom tiles, custom tile design">
-    <meta property="og:title" content="Euro Standart LLC - Tile Installation Experts">
-    <meta property="og:description" content="High-quality tile installation services for kitchens, bathrooms, and more. Get a free quote today!">
-    <meta property="og:image" content="logo.jpeg">
-    <title>Euro Standart LLC</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P8KL67463"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0P8KL67463');
-    </script>
-    
-    <style>
-        /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-        header {
-            background: #222;
-            color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo {
-            max-width: 120px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #f4a261;
-        }
-        .cta-button {
-            background: #f4a261;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .cta-button:hover {
-            background: #e76f51;
-        }
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-tile.jpg') no-repeat center center/cover;
-            height: 90vh;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-        /* Service Areas */
-        .service-areas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            text-align: center;
-        }
-        .area-card {
-            background: #f4a261;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-        .area-card:hover {
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Euro Standart LLC - Expert Tile Installation Services">
+  <meta name="keywords" content="tile installation, backsplash, bathroom tiles, custom tile design">
+  <meta property="og:title" content="Euro Standart LLC - Tile Installation Experts">
+  <meta property="og:description" content="High-quality tile installation services for kitchens, bathrooms, and more. Get a free quote today!">
+  <meta property="og:image" content="logo.jpeg">
+  <title>Euro Standart LLC</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem 5%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+    }
+    .logo-title-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      max-width: 60px;
+      border-radius: 5px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #f4a261;
+    }
+    .cta-button {
+      background: #f4a261;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .cta-button:hover {
+      background: #e76f51;
+    }
+    .phone-under-cta {
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-tile.jpg') no-repeat center center/cover;
+      height: 90vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      flex-direction: column;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    section {
+      padding: 3rem 5%;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .service-areas, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+    .area-card, .gallery-grid img {
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .area-card {
+      background: #f4a261;
+      color: white;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .area-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    .gallery-grid img {
+      width: 100%;
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    form input, form textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 1rem;
+      margin: 1rem auto;
+      border-left: 5px solid #f4a261;
+      max-width: 700px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
+    #services ul {
+      max-width: 600px;
+      margin: auto;
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+    #services li {
+      margin-bottom: 10px;
+    }
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #f4a261;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      z-index: 999;
+    }
+    .floating-cta:hover {
+      background: #e76f51;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-title-container">
-            <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo">
-            <strong>Euro Standart LLC</strong>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#service-areas">Service Areas</a></li>
-            </ul>
-        </nav>
-        <a href="#contact" class="cta-button">Get a Free Quote</a>
-    </header>
-    
-    <section class="hero">
-        <h1>Transform Your Space with Expert Tile Installation</h1>
-        <p>High-quality craftsmanship and stunning designs to elevate your home.</p>
-        <a href="#contact" class="cta-button">Get a Free Quote</a>
-    </section>
-    
-    <section id="service-areas">
-        <h2>Our Service Areas</h2>
-        <div class="service-areas">
-            <div class="area-card">Minneapolis</div>
-            <div class="area-card">St. Paul</div>
-            <div class="area-card">Apple Valley</div>
-            <div class="area-card">Rosemount</div>
-            <div class="area-card">Eagan</div>
-            <div class="area-card">Lakeville</div>
-            <div class="area-card">Farmington</div>
-            <div class="area-card">Edina</div>
-            <div class="area-card">Bloomington</div>
-            <div class="area-card">Shakopee</div>
-            <div class="area-card">Savage</div>
-            <div class="area-card">Woodbury</div>
-            <div class="area-card">Roseville</div>
-            <div class="area-card">Wayzata</div>
-            <div class="area-card">Eden Prairie</div>
-            <div class="area-card">Maple Grove</div>
-            <div class="area-card">Minnetonka</div>
-            <div class="area-card">Chaska</div>
-        </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: 651-200-8863 | Address: Rosemount, MN | Email: <a href="mailto:iosifdamian@gmail.com">iosifdamian@gmail.com</a></p>
-    </section>
+  <header>
+    <div class="logo-title-container">
+      <img src="logo.jpeg" alt="Euro Standart LLC Logo" class="logo" />
+      <strong style="font-size: 1.25rem;">Euro Standart LLC</strong>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#service-areas">Service Areas</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="cta-button">Get a Free Quote</a>
+    <div class="phone-under-cta">
+      📞 <a href="tel:6512008863" style="color: white;">651-200-8863</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Transform Your Space with Expert Tile Installation</h1>
+    <p>High-quality craftsmanship and stunning designs to elevate your home.</p>
+    <a href="#contact" class="cta-button">Get a Free Quote</a>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>✔️ Bathroom Tile Installation</li>
+      <li>✔️ Kitchen Backsplashes</li>
+      <li>✔️ Custom Showers & Waterproofing</li>
+      <li>✔️ Floor & Wall Tiling</li>
+      <li>✔️ Fireplace Surrounds</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+      <img src="before1.jpg" alt="Before Tile Work">
+      <img src="after1.jpg" alt="After Tile Work">
+      <img src="kitchen1.jpg" alt="Kitchen Tile">
+      <img src="bathroom1.jpg" alt="Bathroom Tile">
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>"They transformed our outdated bathroom into something straight out of a magazine. Highly recommend!"</p>
+      <strong>- Sarah, Eagan MN</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Professional, fast, and clean. Couldn't be happier with the backsplash they installed."</p>
+      <strong>- Mike, Apple Valley MN</strong>
+    </div>
+  </section>
+
+  <section id="service-areas">
+    <h2>Our Service Areas</h2>
+    <div class="service-areas">
+      <div class="area-card">Minneapolis</div>
+      <div class="area-card">St. Paul</div>
+      <div class="area-card">Apple Valley</div>
+      <div class="area-card">Rosemount</div>
+      <div class="area-card">Eagan</div>
+      <div class="area-card">Lakeville</div>
+      <div class="area-card">Farmington</div>
+      <div class="area-card">Edina</div>
+      <div class="area-card">Bloomington</div>
+      <div class="area-card">Shakopee</div>
+      <div class="area-card">Savage</div>
+      <div class="area-card">Woodbury</div>
+      <div class="area-card">Roseville</div>
+      <div class="area-card">Wayzata</div>
+      <div class="area-card">Eden Prairie</div>
+      <div class="area-card">Maple Grove</div>
+      <div class="area-card">Minnetonka</div>
+      <div class="area-card">Chaska</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      📞 <strong>651-200-8863</strong><br/>
+      📍 Rosemount, MN<br/>
+      📧 <a href="mailto:iosifdamian@gmail.com">iosifdamian@gmail.com</a>
+    </p>
+    <form action="mailto:iosifdamian@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+      <button type="submit" class="cta-button">Send Request</button>
+    </form>
+  </section>
+
+  <a href="#contact" class="floating-cta">Get a Quote</a>
 </body>
 </html>
-
