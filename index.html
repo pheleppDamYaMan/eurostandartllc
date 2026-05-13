@@ -15,7 +15,27 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
+  
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+  
   <style>
+
+    #serviceMap {
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+    
     :root {
       --dark: #111111;
       --dark-soft: #1b1b1b;
@@ -764,35 +784,20 @@
       </div>
     </section>
 
-    <section id="areas">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Where We Work</div>
-          <h2>Serving homeowners across Minnesota.</h2>
-        </div>
+   <section id="areas">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Where We Work</div>
+      <h2>Serving a 100-mile radius from Rosemount, MN.</h2>
+      <p>
+        Euro Standart LLC provides professional tile installation throughout the Twin Cities metro
+        and surrounding Minnesota communities.
+      </p>
+    </div>
 
-        <div class="service-areas">
-          <span class="area-pill">Minneapolis</span>
-          <span class="area-pill">St. Paul</span>
-          <span class="area-pill">Apple Valley</span>
-          <span class="area-pill">Rosemount</span>
-          <span class="area-pill">Eagan</span>
-          <span class="area-pill">Lakeville</span>
-          <span class="area-pill">Farmington</span>
-          <span class="area-pill">Edina</span>
-          <span class="area-pill">Bloomington</span>
-          <span class="area-pill">Shakopee</span>
-          <span class="area-pill">Savage</span>
-          <span class="area-pill">Woodbury</span>
-          <span class="area-pill">Roseville</span>
-          <span class="area-pill">Wayzata</span>
-          <span class="area-pill">Eden Prairie</span>
-          <span class="area-pill">Maple Grove</span>
-          <span class="area-pill">Minnetonka</span>
-          <span class="area-pill">Chaska</span>
-        </div>
-      </div>
-    </section>
+    <div id="serviceMap"></div>
+  </div>
+</section>
 
     <section id="contact">
       <div class="container contact-wrap">
@@ -821,5 +826,39 @@
   </footer>
 
   <a href="#contact" class="btn floating-cta">Get a Quote</a>
+
+  <script>
+  // Rosemount, Minnesota coordinates
+  const rosemount = [44.7394, -93.1258];
+
+  const map = L.map("serviceMap").setView(rosemount, 8);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: "© OpenStreetMap contributors"
+  }).addTo(map);
+
+  L.marker(rosemount)
+    .addTo(map)
+    .bindPopup("<strong>Euro Standart LLC</strong><br>Rosemount, MN")
+    .openPopup();
+
+  // 100 miles converted to meters
+  const radiusMeters = 100 * 1609.34;
+
+  L.circle(rosemount, {
+    radius: radiusMeters,
+    color: "#c99a4a",
+    fillColor: "#c99a4a",
+    fillOpacity: 0.18,
+    weight: 3
+  }).addTo(map);
+
+  map.scrollWheelZoom.disable();
+
+  map.on("click", function () {
+    map.scrollWheelZoom.enable();
+  });
+</script>
 </body>
 </html>
