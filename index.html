@@ -4,769 +4,790 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Euro Standart LLC | Minnesota Tile Installation & Remodeling</title>
-  <meta name="description" content="Euro Standart LLC provides tile installation and remodeling in Minnesota. Showers, bathrooms, backsplashes, floors, fireplaces, and custom tile work near Rosemount and the Twin Cities metro." />
-  <meta name="keywords" content="tile installation Minnesota, tile remodeling Minnesota, bathroom tile Rosemount MN, shower tile, backsplash installer, tile contractor Twin Cities, Euro Standart LLC" />
+  <title>Euro Standart LLC | Tile Installation & Remodeling in Minnesota</title>
+  <meta name="description" content="Euro Standart LLC provides tile installation and remodeling throughout the Twin Cities metro and nearby Minnesota communities." />
 
-  <meta property="og:title" content="Euro Standart LLC | Tile Installation & Remodeling in Minnesota" />
-  <meta property="og:description" content="Minnesota tile installation and remodeling for showers, bathrooms, backsplashes, floors, fireplaces, and custom tile projects. Get a free estimate." />
-  <meta property="og:image" content="logo.jpeg" />
-  <meta property="og:type" content="website" />
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Leaflet Map CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 
   <style>
-    :root {
-      --dark: #111111;
-      --dark-soft: #1b1b1b;
-      --cream: #f7f3ec;
-      --white: #ffffff;
-      --muted: #67635d;
-      --gold: #c99a4a;
-      --gold-dark: #a9782e;
-      --border: #ded6c9;
-      --shadow: 0 14px 38px rgba(0, 0, 0, 0.12);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      margin: 0;
-      font-family: "Inter", Arial, sans-serif;
-      background: var(--cream);
-      color: var(--dark);
-      line-height: 1.55;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #f7f4ee;
+      line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .top-bar {
-      background: var(--dark);
-      color: var(--white);
-      padding: 9px 5%;
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .top-bar a { color: var(--white); font-weight: 900; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* HEADER */
 
     header {
-      background: rgba(247, 243, 236, 0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      background: #f7f4ee;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
     }
 
-    .nav-wrap {
-      width: min(1180px, 92%);
+    .navbar {
+      max-width: 1200px;
       margin: 0 auto;
-      min-height: 76px;
+      padding: 18px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 30px;
     }
 
-    .brand {
+    .logo-area {
       display: flex;
       align-items: center;
-      gap: 11px;
-      font-weight: 900;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      min-width: 0;
+      gap: 12px;
     }
 
-    .brand img {
+    .logo-area img {
       width: 52px;
       height: 52px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--dark);
-      flex: 0 0 auto;
+      object-fit: contain;
     }
 
-    .brand span { line-height: 1.05; }
+    .logo-text h1 {
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
 
-    .brand small {
-      display: block;
-      font-size: 0.66rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-top: 4px;
+    .logo-text p {
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #555;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: #a77735;
+    }
+
+    .estimate-btn {
+      background: #b8863b;
+      color: #111;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
       white-space: nowrap;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      padding: 0;
-      margin: 0;
-      align-items: center;
+    .estimate-btn:hover {
+      background: #9f722e;
+      color: white;
     }
 
-    nav a {
-      font-size: 0.82rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #2c2c2c;
-    }
-
-    nav a:hover { color: var(--gold-dark); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border-radius: 999px;
-      background: var(--gold);
-      color: var(--dark);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-size: 0.8rem;
-      border: 2px solid var(--gold);
-      transition: 0.22s ease;
-      cursor: pointer;
-      text-align: center;
-      min-height: 48px;
-    }
-
-    .btn:hover {
-      background: var(--gold-dark);
-      border-color: var(--gold-dark);
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    .btn.dark {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.34);
-      color: var(--white);
-    }
+    /* HERO */
 
     .hero {
-      min-height: 76vh;
-      display: grid;
-      align-items: center;
-      color: var(--white);
+      min-height: 82vh;
       background:
-        linear-gradient(90deg, rgba(0,0,0,0.83), rgba(0,0,0,0.52), rgba(0,0,0,0.24)),
-        url("hero-tile.jpg") center/cover no-repeat;
-      padding: 82px 6%;
+        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.55)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 90px 24px;
     }
 
-    .hero-content { width: min(820px, 100%); }
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
 
-    .eyebrow {
-      color: var(--gold);
-      font-size: 0.88rem;
+    .hero-label {
+      color: #d7a756;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      max-width: 850px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.95;
+      text-transform: uppercase;
       font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 12px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.55rem, 7vw, 6.1rem);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      margin: 0 0 20px;
-      text-transform: uppercase;
+      margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: clamp(1.03rem, 2vw, 1.25rem);
-      max-width: 650px;
-      margin: 0 0 28px;
+      max-width: 600px;
+      font-size: 19px;
       color: #f1f1f1;
+      margin-bottom: 34px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .quick-tags {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 24px;
-      max-width: 720px;
+      gap: 16px;
     }
 
-    .quick-tags span {
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.08);
-      color: #f7f7f7;
+    .primary-btn,
+    .secondary-btn {
+      padding: 15px 28px;
       border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 0.88rem;
-      font-weight: 700;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
     }
 
-    section { padding: 72px 6%; }
-    .container { width: min(1180px, 100%); margin: 0 auto; }
+    .primary-btn {
+      background: #b8863b;
+      color: #111;
+    }
 
-    .section-heading {
-      max-width: 760px;
-      margin: 0 auto 38px;
+    .secondary-btn {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background: #d0a052;
+    }
+
+    .secondary-btn:hover {
+      background: white;
+      color: #111;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 90px 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      color: #a77735;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
       text-align: center;
     }
 
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(1.9rem, 4vw, 3.4rem);
-      line-height: 1.02;
+    .section-title {
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.05;
+      font-weight: 900;
+      color: #222;
       text-transform: uppercase;
-      letter-spacing: -0.04em;
+      text-align: center;
     }
 
-    .section-heading p {
-      color: var(--muted);
-      font-size: 1.04rem;
-      margin: 14px auto 0;
+    .section-subtitle {
+      max-width: 700px;
+      margin: 0 auto 45px;
+      color: #555;
+      font-size: 18px;
+      text-align: center;
     }
+
+    /* SERVICES */
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 24px;
     }
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 26px rgba(0,0,0,0.06);
+    .service-card {
+      background: white;
+      padding: 34px;
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
     }
 
-    .service-card { padding: 25px; }
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 15px;
-      background: #f0e2c8;
-      display: grid;
-      place-items: center;
-      color: var(--gold-dark);
-      font-size: 1.28rem;
-      margin-bottom: 18px;
-      font-weight: 900;
-    }
-
-    .service-card h3,
-    .project-card h3,
-    .process-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.15rem;
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
       text-transform: uppercase;
-      letter-spacing: -0.02em;
     }
 
-    .service-card p,
-    .process-card p {
-      margin: 0;
-      color: var(--muted);
+    .service-card p {
+      color: #555;
     }
 
-    .dark-section { background: var(--dark); color: var(--white); }
-    .dark-section .section-heading p { color: #d6d6d6; }
+    /* WORK PREVIEW */
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+    .work-preview {
+      background: #fff;
     }
 
-    .project-card {
-      position: relative;
-      min-height: 255px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: var(--dark-soft);
-      box-shadow: var(--shadow);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 255px;
-      object-fit: cover;
-      opacity: 0.8;
-      transition: 0.35s ease;
-    }
-
-    .project-card:hover img { transform: scale(1.06); opacity: 0.58; }
-
-    .project-card h3 {
-      position: absolute;
-      left: 17px;
-      bottom: 16px;
-      margin: 0;
-      color: var(--white);
-      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-    }
-
-    .process-grid {
+    .work-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .process-card {
-      padding: 26px;
-      background: var(--white);
-      border-radius: 20px;
-      border: 1px solid var(--border);
+    .work-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.13);
+      background: #111;
+      cursor: pointer;
+    }
+
+    .work-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .work-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .work-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+      color: white;
+    }
+
+    .work-overlay span {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+
+    .view-gallery-wrap {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .process-step {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
     }
 
     .process-number {
-      color: var(--gold-dark);
-      font-size: 0.9rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 8px;
-    }
-
-    .service-areas {
+      width: 44px;
+      height: 44px;
+      background: #b8863b;
+      color: #111;
+      border-radius: 50%;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 9px;
-      max-width: 940px;
-      margin: 24px auto 0;
+      font-weight: 900;
+      margin-bottom: 18px;
     }
 
-    .area-pill {
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--white);
-      font-weight: 800;
-      font-size: 0.9rem;
+    .process-step h3 {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 18px;
     }
 
-    #serviceMap {
+    .process-step p {
+      color: #555;
+    }
+
+    /* SERVICE AREA */
+
+    .service-area-section {
+      background: #f7f4ee;
+      padding: 80px 20px;
+    }
+
+    .service-area-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .service-area-container h2 {
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      font-weight: 900;
+      color: #222;
+      text-transform: uppercase;
+    }
+
+    .service-area-text {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    #serviceAreaMap {
       width: 100%;
-      height: 430px;
-      border-radius: 22px;
+      height: 420px;
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .contact-wrap {
+    /* CONTACT */
+
+    .contact-section {
+      background: #181818;
+      color: white;
+    }
+
+    .contact-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
       align-items: start;
     }
 
-    .contact-box {
-      padding: 30px;
-      background: var(--dark);
-      color: var(--white);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
+    .contact-section .section-label,
+    .contact-section .section-title,
+    .contact-section .section-subtitle {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
     }
 
-    .contact-box h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
+    .contact-info p {
+      color: #ddd;
+      margin-bottom: 14px;
+      font-size: 18px;
     }
 
-    .contact-box p { margin: 11px 0; color: #e8e8e8; }
-    .contact-box a { color: var(--white); font-weight: 900; }
+    .contact-info strong {
+      color: white;
+    }
 
     form {
-      background: var(--white);
-      padding: 30px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 13px;
+      background: white;
+      color: #222;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.25);
     }
 
-    input, textarea {
+    form label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    form input,
+    form textarea {
       width: 100%;
-      padding: 15px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      font: inherit;
+      padding: 14px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
       font-size: 16px;
-      background: #fbfaf7;
+      font-family: inherit;
     }
 
-    textarea { min-height: 130px; resize: vertical; }
+    form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    form button {
+      width: 100%;
+      border: none;
+      background: #b8863b;
+      color: #111;
+      padding: 15px;
+      border-radius: 999px;
+      font-weight: 900;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    form button:hover {
+      background: #d0a052;
+    }
+
+    /* FOOTER */
 
     footer {
-      background: var(--dark);
-      color: var(--white);
-      padding: 30px 6% 92px;
+      background: #111;
+      color: #aaa;
       text-align: center;
-      font-size: 0.94rem;
+      padding: 26px 20px;
+      font-size: 14px;
     }
 
-    footer p { margin: 6px 0; }
+    /* MOBILE */
 
-    .mobile-cta {
-      display: none;
-    }
-
-    @media (max-width: 980px) {
-      .nav-wrap {
+    @media (max-width: 900px) {
+      .navbar {
         flex-wrap: wrap;
-        padding: 13px 0;
-        gap: 12px;
       }
 
       nav {
         order: 3;
         width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 3px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
       }
-
-      nav ul {
-        justify-content: flex-start;
-        gap: 14px;
-        width: max-content;
-        min-width: 100%;
-      }
-
-      .nav-wrap > .btn { display: none; }
 
       .services-grid,
+      .work-grid,
       .process-grid,
-      .contact-wrap {
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero {
+        min-height: 70vh;
+      }
+
+      .work-card img {
+        height: 260px;
+      }
     }
 
-    @media (max-width: 620px) {
-      .top-bar {
-        justify-content: center;
-        text-align: center;
-        font-size: 0.82rem;
-        padding: 8px 5%;
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 14px 16px;
       }
 
-      .brand img { width: 46px; height: 46px; }
-      .brand { font-size: 0.92rem; }
-      .brand small { font-size: 0.58rem; }
-
-      .hero {
-        min-height: auto;
-        padding: 56px 6% 50px;
-        background-position: center;
+      .logo-text h1 {
+        font-size: 15px;
       }
 
-      .hero h1 { font-size: clamp(2.25rem, 13vw, 3.8rem); }
-      .hero p { font-size: 1rem; }
-
-      .hero-actions { align-items: stretch; }
-      .btn { width: 100%; }
-
-      .quick-tags span { font-size: 0.82rem; padding: 6px 10px; }
-
-      section { padding: 54px 5%; }
-      .section-heading { margin-bottom: 28px; }
-      .section-heading h2 { font-size: clamp(1.75rem, 9vw, 2.55rem); }
-      .section-heading p { font-size: 0.98rem; }
-
-      .service-card,
-      .process-card,
-      .contact-box,
-      form { padding: 22px; }
-
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card, .project-card img { min-height: 220px; }
-
-      #serviceMap { height: 315px; border-radius: 18px; }
-      .area-pill { font-size: 0.84rem; padding: 8px 12px; }
-
-      .mobile-cta {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        position: fixed;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        z-index: 1002;
+      .logo-area img {
+        width: 44px;
+        height: 44px;
       }
 
-      .mobile-cta a {
-        min-height: 48px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      .estimate-btn {
+        padding: 11px 17px;
+        font-size: 12px;
+      }
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .hero h2 {
+        font-size: 42px;
+      }
+
+      .service-area-container h2 {
+        font-size: 34px;
+      }
+
+      #serviceAreaMap {
+        height: 340px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="top-bar">
-    <span>Tile Installation & Remodeling • Rosemount & Twin Cities Area</span>
-    <span>Call or text: <a href="tel:6122367381">612-236-7381</a></span>
-  </div>
 
+  <!-- HEADER -->
   <header>
-    <div class="nav-wrap">
-      <a href="#" class="brand">
-        <img src="logo.jpeg" alt="Euro Standart LLC Logo" />
-        <span>
-          Euro Standart LLC
-          <small>Tile Installation & Remodeling</small>
-        </span>
+    <div class="navbar">
+      <a href="index.html" class="logo-area">
+        <img src="images/logo.png" alt="Euro Standart LLC logo" />
+        <div class="logo-text">
+          <h1>Euro Standart LLC</h1>
+          <p>Tile Installation & Remodeling</p>
+        </div>
       </a>
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Work</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#areas">Areas</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="gallery.html">Work</a>
+        <a href="#process">Process</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
       </nav>
 
-      <a href="#contact" class="btn">Free Estimate</a>
+      <a class="estimate-btn" href="#contact">Free Estimate</a>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">Minnesota Tile Installation & Remodeling</div>
-        <h1>Tile work done right.</h1>
-        <p>Euro Standart LLC installs and remodels tile for showers, bathrooms, backsplashes, floors, fireplaces, and custom projects across the Twin Cities area.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-label">Minnesota Tile Contractor</p>
+      <h2>Professional Tile Installation & Remodeling</h2>
+      <p>
+        Euro Standart LLC provides clean, detailed tile work for bathrooms, showers, backsplashes, floors, and remodeling projects.
+      </p>
 
-        <div class="hero-actions">
-          <a href="#contact" class="btn">Get a Free Quote</a>
-          <a href="#projects" class="btn dark">View Our Work</a>
-        </div>
-
-        <div class="quick-tags" aria-label="Tile services">
-          <span>Showers</span>
-          <span>Bathrooms</span>
-          <span>Backsplashes</span>
-          <span>Floors</span>
-          <span>Fireplaces</span>
-        </div>
+      <div class="hero-buttons">
+        <a href="#contact" class="primary-btn">Get a Free Estimate</a>
+        <a href="gallery.html" class="secondary-btn">View Our Work</a>
       </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Services</div>
-          <h2>Tile installation and remodeling for your home.</h2>
-          <p>Clean prep, straight layout, waterproofing, careful cuts, and a professional finish.</p>
-        </div>
-
-        <div class="services-grid">
-          <article class="card service-card">
-            <div class="icon">▣</div>
-            <h3>Showers</h3>
-            <p>Shower tile, waterproofing, niches, benches, curbs, and shower remodels.</p>
-          </article>
-
-          <article class="card service-card">
-            <div class="icon">▥</div>
-            <h3>Bathrooms</h3>
-            <p>Bathroom floors, walls, tub surrounds, and tile remodeling updates.</p>
-          </article>
-
-          <article class="card service-card">
-            <div class="icon">▤</div>
-            <h3>Backsplashes</h3>
-            <p>Kitchen, vanity, laundry room, and accent backsplash installation.</p>
-          </article>
-
-          <article class="card service-card">
-            <div class="icon">◇</div>
-            <h3>Tile Floors</h3>
-            <p>Floor tile installation with layout, leveling, spacing, and transitions.</p>
-          </article>
-
-          <article class="card service-card">
-            <div class="icon">◆</div>
-            <h3>Fireplaces</h3>
-            <p>Fireplace surrounds and accent tile work for a clean focal point.</p>
-          </article>
-
-          <article class="card service-card">
-            <div class="icon">▦</div>
-            <h3>Repairs & Details</h3>
-            <p>Tile repairs, grout updates, trims, edges, patterns, and custom details.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="dark-section">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Our Work</div>
-          <h2>Tile projects for Minnesota homes.</h2>
-          <p>Photos help customers quickly see the kind of work you do.</p>
-        </div>
-
-        <div class="projects-grid">
-          <a class="project-card" href="#contact">
-            <img src="IMG_7519.jpeg" alt="Bathroom tile installation project" />
-            <h3>Bathrooms</h3>
-          </a>
-
-          <a class="project-card" href="#contact">
-            <img src="backsplash1.jpg" alt="Kitchen backsplash tile project" />
-            <h3>Backsplashes</h3>
-          </a>
-
-          <a class="project-card" href="#contact">
-            <img src="IMG_0791.jpeg" alt="Tile shower remodeling project" />
-            <h3>Showers</h3>
-          </a>
-
-          <a class="project-card" href="#contact">
-            <img src="floor1.jpg" alt="Tile floor installation project" />
-            <h3>Floors</h3>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Process</div>
-          <h2>Simple from first message to finished tile.</h2>
-        </div>
-
-        <div class="process-grid">
-          <article class="process-card">
-            <div class="process-number">Step 1</div>
-            <h3>Send Details</h3>
-            <p>Tell us what you need, your city, and send photos if you have them.</p>
-          </article>
-
-          <article class="process-card">
-            <div class="process-number">Step 2</div>
-            <h3>Get an Estimate</h3>
-            <p>We review the project, discuss prep, materials, layout, and timeline.</p>
-          </article>
-
-          <article class="process-card">
-            <div class="process-number">Step 3</div>
-            <h3>Install & Finish</h3>
-            <p>We complete the tile work with attention to spacing, cuts, grout, and cleanup.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-  <section id="areas">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Service Area</div>
-      <h2>Tile installation and remodeling throughout the Twin Cities metro and nearby Minnesota communities.</h2>
     </div>
+  </section>
 
-    <div id="serviceMap"></div>
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <p class="section-label">Services</p>
+      <h2 class="section-title">Tile work built with detail and care</h2>
+      <p class="section-subtitle">
+        From small backsplashes to full bathroom remodels, we focus on clean layouts, strong prep work, and a finished result that looks professional.
+      </p>
 
-    
-
-    <section id="contact">
-      <div class="container contact-wrap">
-        <div class="contact-box">
-          <div class="eyebrow">Free Estimate</div>
-          <h2>Ready to start your tile project?</h2>
-          <p><strong>Phone:</strong> <a href="tel:6122367381">612-236-7381</a></p>
-          <p><strong>Email:</strong> <a href="mailto:iosifdamian@gmail.com">iosifdamian@gmail.com</a></p>
-          <p><strong>Location:</strong> Rosemount, MN</p>
-          <p>For a faster estimate, send photos, approximate size, project type, and your city.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Bathroom Tile</h3>
+          <p>Tile installation for bathroom floors, shower walls, tub surrounds, and full bathroom remodel projects.</p>
         </div>
 
-        <form action="https://formspree.io/f/mojrbqaa" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="tel" name="phone" placeholder="Your Phone Number" />
-          <textarea name="message" placeholder="Tell us about your tile installation or remodeling project..." required></textarea>
-          <button type="submit" class="btn">Send Request</button>
+        <div class="service-card">
+          <h3>Shower Tile</h3>
+          <p>Custom shower tile work with proper waterproofing, clean corners, and detailed finishing.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Backsplashes</h3>
+          <p>Kitchen backsplash installation using ceramic, porcelain, subway tile, mosaic tile, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK PREVIEW -->
+  <section id="work" class="work-preview">
+    <div class="container">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Click any photo to view the full gallery</h2>
+      <p class="section-subtitle">
+        See examples of tile installation and remodeling projects completed by Euro Standart LLC.
+      </p>
+
+      <div class="work-grid">
+        <a href="gallery.html" class="work-card">
+          <img src="images/work1.jpg" alt="Tile bathroom project by Euro Standart LLC" />
+          <div class="work-overlay">
+            <span>View Tile Gallery</span>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="work-card">
+          <img src="images/work2.jpg" alt="Tile shower project by Euro Standart LLC" />
+          <div class="work-overlay">
+            <span>View Tile Gallery</span>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="work-card">
+          <img src="images/work3.jpg" alt="Tile backsplash project by Euro Standart LLC" />
+          <div class="work-overlay">
+            <span>View Tile Gallery</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="view-gallery-wrap">
+        <a href="gallery.html" class="primary-btn">Open Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <p class="section-label">Process</p>
+      <h2 class="section-title">Simple process from estimate to finished tile</h2>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <h3>Contact</h3>
+          <p>Reach out with project details, photos, and your location.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <h3>Estimate</h3>
+          <p>We review the project and provide a clear estimate.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <h3>Install</h3>
+          <p>We complete the tile work with proper prep, layout, and detail.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <h3>Finish</h3>
+          <p>We clean up the area and make sure the finished work looks right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section id="areas" class="service-area-section">
+    <div class="service-area-container">
+      <p class="section-label">Service Area</p>
+
+      <h2>
+        Tile installation and remodeling throughout the Twin Cities metro and nearby Minnesota communities.
+      </h2>
+
+      <p class="service-area-text">
+        Based near Rosemount, MN, Euro Standart LLC serves homeowners across the surrounding metro area.
+      </p>
+
+      <div id="serviceAreaMap"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">Request a free estimate</h2>
+          <p class="section-subtitle">
+            Send your project details and we’ll get back to you as soon as possible.
+          </p>
+
+          <p><strong>Phone:</strong> <a href="tel:6512008863">651-200-8863</a></p>
+          <p><strong>Email:</strong> <a href="mailto:damyanphilipp@gmail.com">damyanphilipp@gmail.com</a></p>
+          <p><strong>Location:</strong> Rosemount, Minnesota</p>
+        </div>
+
+        <form action="https://formsubmit.co/damyanphilipp@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Estimate Request from Euro Standart LLC Website">
+          <input type="hidden" name="_captcha" value="false">
+
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required>
+
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" name="phone" required>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email">
+
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" placeholder="Tell us about your tile project..." required></textarea>
+
+          <button type="submit">Send Request</button>
         </form>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <p>© Euro Standart LLC. Tile installation and remodeling in Minnesota.</p>
-    <p>Serving Rosemount, the Twin Cities metro, and nearby communities.</p>
+    <p>© 2026 Euro Standart LLC. Tile Installation & Remodeling in Minnesota.</p>
   </footer>
 
-  <div class="mobile-cta" aria-label="Quick contact buttons">
-    <a href="tel:6122367381" class="btn dark">Call</a>
-    <a href="#contact" class="btn">Quote</a>
-  </div>
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
-    const rosemount = [44.7394, -93.1258];
-    const map = L.map("serviceMap", { scrollWheelZoom: false }).setView(rosemount, 9);
+    const map = L.map('serviceAreaMap', {
+      scrollWheelZoom: false
+    }).setView([44.7394, -93.1258], 9);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 18,
-      attribution: "© OpenStreetMap contributors"
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
+
+    const rosemount = [44.7394, -93.1258];
 
     L.marker(rosemount)
       .addTo(map)
-      .bindPopup("<strong>Euro Standart LLC</strong><br>Rosemount, MN<br>Tile Installation & Remodeling")
+      .bindPopup(`
+        <strong>Euro Standart LLC</strong><br>
+        Rosemount, MN<br>
+        Tile Installation & Remodeling
+      `)
       .openPopup();
 
-    const radiusMeters = 50 * 1609.34;
-
     L.circle(rosemount, {
-      radius: radiusMeters,
-      color: "#c99a4a",
-      fillColor: "#c99a4a",
-      fillOpacity: 0.18,
-      weight: 3
+      radius: 80467,
+      color: '#a77735',
+      weight: 2,
+      fillColor: '#a77735',
+      fillOpacity: 0.08
     }).addTo(map);
-
-    map.on("click", function () {
-      map.scrollWheelZoom.enable();
-    });
   </script>
+
 </body>
 </html>
