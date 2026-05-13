@@ -831,7 +831,7 @@
   // Rosemount, Minnesota coordinates
   const rosemount = [44.7394, -93.1258];
 
-  const map = L.map("serviceMap").setView(rosemount, 8);
+  const map = L.map("serviceMap").setView(rosemount, 9);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
@@ -844,7 +844,7 @@
     .openPopup();
 
   // 100 miles converted to meters
-  const radiusMeters = 100 * 1609.34;
+  const radiusMeters = 50 * 1609.34;
 
   L.circle(rosemount, {
     radius: radiusMeters,
