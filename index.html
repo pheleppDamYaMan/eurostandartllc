@@ -105,9 +105,11 @@
     .brand img {
       width: 48px;
       height: 48px;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 8px;
       border: 1px solid var(--border);
+      background: var(--white);
+      padding: 3px;
     }
 
     nav ul {
@@ -297,7 +299,12 @@
     }
 
     .about-section {
+      display: none;
       background: #efe7db;
+    }
+
+    .about-section:target {
+      display: block;
     }
 
     .about-layout {
@@ -756,7 +763,7 @@
   <header>
     <div class="nav-wrap">
       <a href="#" class="brand">
-        <img src="logo.jpeg" alt="Euro Standart LLC Logo" />
+        <img src="C773D13B-0B02-46AF-896E-F8268F5BD28D.png" alt="Euro Standart LLC Logo" />
         <span>Euro Standart LLC</span>
       </a>
 
